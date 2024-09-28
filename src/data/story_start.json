@@ -1,0 +1,59 @@
+{
+   "plot":"You are exploring a world. Almost every scene is normal, but if the hero explores enough of the normal parts (eg more than 10 scenes), they will slowly start to uncover the mysterious parts. Most of the tone is simply setting a beautiful and uplifting landscape filled with wonder.",
+   "scenes":{
+      "start":{
+         "text":"You are standing at the end of a road before a small brick building. A small stream flows out of the building and down a gully to the south. A road runs up a small hill to the west.",
+         "scene_summary":"Start of the story. Standing in front of a brick building.",
+         "choices":[
+            {
+               "text":"Take the road up the hill",
+               "scene_key":"overlooking_valley"
+            },
+            {
+               "text":"Walk up to the stream",
+               "scene_key":"next_to_gully"
+            },
+            {
+               "text":"Knock on the door",
+               "scene_key":"knocking_on_small_brick_building"
+            }
+         ]
+      },
+      "knocking_on_small_brick_building":{
+         "text":"You knock on the door, but no one answers. You hear a faint sound of a dog barking from inside.",
+         "scene_summary":"Nobody answers.",
+         "choices":[
+            {
+               "text":"Go back to the start",
+               "scene_key":"start"
+            },
+            {
+               "text":"Walk around and look through the window",
+               "scene_key":"looking_through_window"
+            },
+            {
+               "text":"Walk around to the back of the building",
+               "scene_key":"back_of_building"
+            }
+         ]
+      },
+      "looking_through_window":{
+         "text":"You look through the window and see a small dimly lit room with a table and a chair. There is a small dog staring at you as the chair rocks back and forth. Someone's in it.",
+         "scene_summary":"Curious view through the window.",
+         "choices":[
+            {
+               "text":"Go back to the start",
+               "scene_key":"start"
+            },
+            {
+               "text":"Walk around to the back of the building",
+               "scene_key":"back_of_building"
+            },
+            {
+               "text":"Call for the stranger inside.",
+               "scene_key":"calling_stranger"
+            }
+         ]
+      }
+   }
+}
