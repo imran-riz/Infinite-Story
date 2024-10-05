@@ -1,5 +1,5 @@
 {
-   "plot":"You are exploring a world. Almost every scene is normal, but if the hero explores enough of the normal parts (eg more than 10 scenes), they will slowly start to uncover the mysterious parts. Most of the tone is simply setting a beautiful and uplifting landscape filled with wonder.",
+   "plot":"You are exploring a world. Almost every scene is normal, but if the hero explores enough of the normal parts (eg more than 10 scenes), they will slowly start to uncover the mysterious parts. Most of the tone is simply setting a beautiful and slightly uplifting landscape filled with wonder and mystery.",
    "scenes":{
       "start":{
          "text":"You are standing at the end of a road before a small brick building. A small stream flows out of the building and down a gully to the south. A road runs up a small hill to the west.",
@@ -24,36 +24,59 @@
          "scene_summary":"Nobody answers.",
          "choices":[
             {
-               "text":"Go back to the start",
-               "scene_key":"start"
-            },
-            {
                "text":"Walk around and look through the window",
-               "scene_key":"looking_through_window"
+               "scene_key":"looking_through_the_window"
             },
             {
                "text":"Walk around to the back of the building",
                "scene_key":"back_of_building"
+            },
+            {
+               "text":"Go back to the start",
+               "scene_key":"start"
             }
          ]
       },
-      "looking_through_window":{
-         "text":"You look through the window and see a small dimly lit room with a table and a chair. There is a small dog staring at you as the chair rocks back and forth. Someone's in it.",
-         "scene_summary":"Curious view through the window.",
-         "choices":[
+      "next_to_gully": {
+         "text": "You follow the trickle of water down the gully, the small stream broadening to form a rippling brook. The air here is cool and smells faintly of moss and earth. Lush green ferns line the banks of the brook, and the sound of the running water fills the air. The path curves to the left, disappearing into the thick green undergrowth. ",
+         "scene_summary": "Following the stream",
+         "choices": [
             {
-               "text":"Go back to the start",
-               "scene_key":"start"
+               "text": "Follow the path into the undergrowth",
+               "scene_key": "into_the_undergrowth"
             },
             {
-               "text":"Walk around to the back of the building",
-               "scene_key":"back_of_building"
+               "text": "Follow the brook further",
+               "scene_key": "following_the_brook"
             },
             {
-               "text":"Call for the stranger inside.",
-               "scene_key":"calling_stranger"
+               "text": "Go back to the start",
+               "scene_key": "start"
+            }
+        ]
+      },
+      "overlooking_valley": {
+         "text": "The road winds up the hill, past a grove of tall, slender trees with leaves the color of jade. You reach the crest and find yourself looking down into a valley. The sun bathes the valley in warm, golden light, making the river below shimmer like liquid silver. To the east, a small village nestled among the trees seems to beckon you closer.",
+         "scene_summary": "Reaching the top of the hill and finding a beautiful view of the valley below.",
+         "choices": [
+            {
+               "text": "Follow the road down into the valley",
+               "scene_key": "valley_below"
+            },
+            {
+               "text": "Walk to the edge of the cliff and look out over the valley",
+               "scene_key": "cliff_edge"
+            },
+            {
+               "text": "Head towards the village",
+               "scene_key": "approaching_village"
+            },
+            {
+               "text": "Go back to the start",
+               "scene_key": "start"
             }
          ]
       }
+
    }
 }
