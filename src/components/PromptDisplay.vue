@@ -1,8 +1,7 @@
 <script setup>
 import storyData from "../data/story_start.json";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { getResponse } from "../resources/gemini.js";
-import { ref, nextTick } from "vue";
+import { ref } from "vue";
 
 
 const currentSceneKey = ref("start")
@@ -61,23 +60,74 @@ const showStoryData = () => {
 
 
 <template>
-   <div v-if="loading">
-      <h3>playing suspenseful music....</h3>
-   </div>
-   <div v-else>
-      <h3>{{ summary }}</h3>
-      <p>{{ text }}</p>
-      <label v-for="choice in choices" :key="choice">
-         <button @click="select(choice)" style="margin-right: 12px;">{{ choice.text }}</button>
-      </label>
-   </div>
-
-   <div>
-      <br><br><br>
-      <button @click="showStoryData()">Show Story Data</button>
+   <div class="container">
+      <div class="story-box">
+         <h1>{{ summary }}</h1>
+         <p>{{ text }}</p>
+      </div>
+      <div class="choices-box">
+         <button v-for="(choice, index) in choices" :key="choice" @click="select(choice)">
+            {{ String.fromCharCode(65 + index) }}. {{ choice.text }}
+         </button>
+      </div>
    </div>
 </template>
 
 
 <style scoped>
+.container {
+   text-align: center;
+   background-color: #f5e0b3;
+   padding: 40px;
+   height: 100vh;
+}
+
+.story-box {
+   background-color: #3a100c;
+   color: white;
+   font-family: Rosarivo;
+   margin: auto;
+   padding: 40px;
+   border-radius: 15px;
+   margin-bottom: 60px;
+   width: 1160px;
+   height: 480px;
+}
+
+.story-box h1 {
+   font-weight: normal;
+   font-size: 40px;
+   height: 15%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.story-box p {
+   font-size: 24px;
+   font-weight: normal;
+   height: 85%;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.choices-box {
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+}
+
+.choices-box button {
+   background-color: #654032;
+   color: #E3D4B0;
+   font-family: Rosarivo;
+   font-size: 20px;
+   border: none;
+   padding: 15px 25px;
+   border-radius: 15px;
+   cursor: pointer;
+   flex-shrink: 0;
+}
 </style>
