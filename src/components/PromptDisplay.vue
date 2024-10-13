@@ -1,7 +1,7 @@
 <script setup>
 import storyData from "../data/story_start.json";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 
 
 const currentSceneKey = ref("start")
@@ -46,7 +46,7 @@ const select = async (choice) => {
    }
    else {   // otherwise, generate the next scene and write it to the story data
       loading.value = true;
-      generateNextScene(choice.scene_key);
+      await generateNextScene(choice.scene_key);
    }
 
    currentSceneKey.value = choice.scene_key;
@@ -56,6 +56,18 @@ const select = async (choice) => {
 const showStoryData = () => {
    console.log("Story Data: ", storyData);
 };
+
+
+onBeforeMount(() => {
+   // add an event listener to the window object to listen for key presses and then select the corresponding choice
+   window.addEventListener("keyup", (event) => {
+      const index = event.key.toUpperCase().length === 1 ? event.key.toUpperCase().charCodeAt(0) - 65 : -1;
+
+      if (index >= 0 && index < choices.value.length) {
+         select(choices.value[index]);
+      }
+   });
+});
 </script>
 
 
