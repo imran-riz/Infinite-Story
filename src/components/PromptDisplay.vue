@@ -100,7 +100,7 @@ onBeforeMount(() => {
    font-family: Rosarivo,serif;
    padding: 40px;
    border-radius: 15px;
-   margin-bottom: 60px;
+   margin: auto auto 60px;
    width: 1160px;
    height: 480px;
 }
