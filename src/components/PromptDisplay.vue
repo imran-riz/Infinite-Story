@@ -97,8 +97,7 @@ onBeforeMount(() => {
 .story-box {
    background-color: #3a100c;
    color: white;
-   font-family: Rosarivo;
-   margin: auto;
+   font-family: Rosarivo,serif;
    padding: 40px;
    border-radius: 15px;
    margin-bottom: 60px;
@@ -134,7 +133,7 @@ onBeforeMount(() => {
 .choices-box button {
    background-color: #654032;
    color: #E3D4B0;
-   font-family: Rosarivo;
+   font-family: Rosarivo,serif;
    font-size: 20px;
    border: none;
    padding: 15px 25px;
