@@ -12,15 +12,15 @@ const loading = ref(false);
 
 
 const generateNextScene = async (newSceneKey) => {
-   const exampleSceneJSON = storyData.scenes[currentSceneKey.value];
+   const currentSceneJSON = storyData.scenes[currentSceneKey.value];
    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
    const model = genAI.getGenerativeModel({
       model: "gemini-1.5-flash"
    });
    const prompt = `Return the next scene of a story for key ${newSceneKey}. The scene should be formatted in plain JSON (without any formatting like newlines, etc) like this, the scene before: ${JSON.stringify(
-      exampleSceneJSON
+      currentSceneJSON
    )}. Don't make the text too long - keep it vivid and interesting. A max of 3 new and interesting choices at the scene should be enough - no need for a go back or a similar option, the choices should take the character forward into the story. The main plot line of the story is ${storyData.plot}.`;
-   // console.log("Prompt: ", prompt);
+   console.log("Prompt: ", prompt);
 
    const response = await model.generateContent(prompt);
    const responseJSON = JSON.parse(response.response.text());
